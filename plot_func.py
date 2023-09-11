@@ -6,12 +6,12 @@ from get_map import get_map
 
 
 
-page = requests.get("https://en.wikipedia.org/wiki/Lists_of_stars_by_constellation")
+page = requests.get("https://web.archive.org/web/20220617210609/https://en.wikipedia.org/wiki/Lists_of_stars_by_constellation") #https://en.wikipedia.org/wiki/Lists_of_stars_by_constellation
 soup = BeautifulSoup(page.content, 'html.parser')
 soup.find_all('li')
 constellations=[element.get_text() for element in soup.find_all('li')[5:93]]
 
-
+print(constellations)
 
 def stereo_coords(r_a, dec):
     '''

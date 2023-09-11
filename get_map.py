@@ -46,8 +46,8 @@ def get_map(constellation):
     mag :
         numpy array of apparant magnitude values.
 
-    '''
-    url = f'https://en.wikipedia.org/wiki/List_of_stars_in_{constellation}'
+    ''' #https://web.archive.org/web/20220615032921/https://en.wikipedia.org/wiki/List_of_stars_in_{constellation}
+    url = f'https://en.wikipedia.org/wiki/List_of_stars_in_{constellation}' #
     #page gets downloaded according to constellation
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser') ##lxml removed: Couldn't find a tree builder
